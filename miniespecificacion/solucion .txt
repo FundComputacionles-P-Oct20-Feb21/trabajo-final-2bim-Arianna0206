@@ -1,0 +1,418 @@
+// Que permita ingresar nuevas cuentas de diversas 
+// plataformas. Las plataformas son:
+
+// Facebook (se necesita los siguientes datos: nombre de 
+// usuario, edad, ciudad, pais, correo electrónico)
+// Twitter (se necesita los siguientes datos: nombre de 
+// usuario, nombres, apellidos, edad, ciudad, pais, idioma, correo electrónico)
+// Whatsapp (se necesita los siguientes datos: nombre de 
+// usuario, número de teléfono, edad, ciudad, pais)
+// Telegram (se necesita los siguientes datos: nombre de usuario, 
+// número de teléfono, ciudad, pais, área de interés)
+// Signal (se necesita los siguientes datos: nombre de usuario, 
+// número de teléfono, ciudad, pais, hobby principal)
+// Instagram (se necesita los siguientes datos: nombre de usuario, 
+// ciudad, edad, correo electrónico)
+// Flickr (se necesita los siguientes datos: nombre de usuario, correo electrónico)
+// La aplicación debe tener los siguientes procedimientos:
+
+// función principal
+// función crearFacebook
+// función crearWhatsapp
+// función crearTelegram
+// función crearSignal
+// función crearInstagram
+// función crearFlickr
+// En la función principal se presenta un ciclo repetitivo que 
+// presenta un menú de opciones:
+
+// Si se ingresa 1 se llamará a crearFacebook
+// Si se ingresa 2 se llamará a crearWhatsapp
+// Si se ingresa 3 se llamará a crearTelegram
+// Si se ingresa 4 se llamará a crearSignal
+// Si se ingresa 5 se llamará a crearInstagram
+// Si se ingresa 6 se llamará a crearFlickr
+// En cada iteración del ciclo; se pregunta al usuario si se 
+// desea salir del ciclo.
+// Cada procedimiento debe imprimir un resumen de la cuenta 
+// creada con todos los valores ingresados
+
+// Cuando el usuario termina el ciclo repetitivo se debe presentar 
+// un mensaje con base al número total de cuentas creadas. Se debe usar 
+// el número total de cuentas como argumento (entero) de una función 
+// llamada obtenerMensaje
+
+// En la función obtenerMensaje existe un parámetro. 
+// El mensaje se forma de la siguiente manera:
+// Se usa el siguiente arreglo unidimensional:  
+
+// (mensajeFinal(3),x(300)[{a-z}, {A-Z}, {BS}])
+
+// Los datos asignados al arreglo son:
+
+// mensajeFinal <-- {"Campaña con poca afluencia",
+// "Campaña moderada siga adelante", "Excelente campaña"}
+// a. Si el número de cuentas creadas está en el rango de 1 a 5 
+// el mensaje será: Campaña con poca afluencia
+
+// b. Si el número de cuentas creadas está en el rango de 6 a 15 
+// el mensaje será: Campaña moderada siga adelante
+
+// c. Si el número de cuentas creadas está en el rango de 16 en adelante, 
+// el mensaje será: Excelente campaña
+
+
+1. Inicio
+2. funcion principal()
+3. 	opcion, i[0-n]
+4.      bandera <-- true
+5.	contador, i[0,n] <-- 1
+6.      salir, x(100) [{1-10}, {A-Z}, {a-z}, {BS}]
+7.      cadenaFinal, x(100) [{1-100}, {A-Z}, {a-z}, {BS}] 
+
+// Se crea un ciclo repetitivo para que el usuario decida ingresar o no más
+// datos con las opciones presentadas 
+
+8.	Mientras (bandera == true) entonces
+
+// Se define las opciones en la que puede el usuario crear cuentas en las 
+// siguientes redes sociales
+
+9. 		Escribir "Ingrese una opción: \n" 
+10. 		Escribir "Ingrese 1 para ingresar a la cuenta de Facebook\n", 
+             	  	 "Ingrese 2 para ingresar a la cuenta de Twitter\n",
+                  	 "Ingrese 3 para ingresar a la cuenta de WhatsApp\n",
+                  	 "Ingrese 4 para ingresar a la cuenta de Telegram\n",
+                  	 "Ingrese 5 para ingresar a la cuenta de Signal\n",
+                  	 "Ingrese 6 para ingresar a la cuenta de Instagram\n",
+                  	 "Ingrese 7 para ingresar a la cuenta de Flickr\n"
+11. 		Leer opcion
+// Se usa una condicional para que al momento en que el usuario escoge una opcion 
+// lo envie a la cuenta que desea crear
+
+12. 		Si(opcion == 1)entonces
+13. 	           crearFacebook()
+14.      	De lo contrario
+15. 	   	   Si(opcion == 2)entonces
+16.           	      crearTwitter()
+17.        	   De lo contrario
+18.          	      Si(opcion == 3)entonces
+19.              	 crearWhatsApp()
+20.           	      De lo contrario
+21.              	 Si(opcion == 4)entonces
+22.                 	    crearTelegram()
+23.              	 De lo contrario
+24.                 	    Si(opcion == 5)entonces
+25.                            crearSignal()
+26.                  	    De lo contrario
+27.                     	Si(opcion == 6)entonces
+28.                        	   crearInstagram()
+29.                     	De lo contrario
+30.                        	   Si(opcion == 7)entonces
+31.                           	      crearFlickr()
+32.                        	   De lo contrario
+33.                           	       Error, ingrese los números presentados
+34.                        	   Fin Si
+35.                     	Fin Si
+36.                  	     Fin Si  
+37.              	  Fin Si
+38.           	        Fin Si
+39.        	    Fin Si
+40.     	  Fin Si
+
+// Se usa un contador para confirmar cuantas cuentas ha creado el usuario
+
+41.	contador <-- contador + 1
+
+// Se usa una condiciona para pregunta al usuario si quiere continuar 
+// agregando más cuentas  
+
+42. 	Escribir ("%s\n" + "Ingresar Si para ingresar mas datos")
+43.     Leer salir
+44.     	Si (salir != "Si")
+45.     		bandera <-- false 
+46.     	Fin Si
+47.	Fin Mientras
+
+48.     Escribir ("Se crearon en total %d de cuentas" , contador)
+
+49.     Escribir ("%s\n" ,cadenaFinal)
+			
+50. fin funcion principal()
+
+// Se define un procedimiento para crear una cuenta en Facebook
+ 
+51. funcion crearFacebook()
+
+52. 	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+53.	edad, i[0-n]
+54.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+55.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+56.	correoElectronico, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
+
+// Se pide datos por teclado al usuario
+
+57.	Escribir "Ingresa un nombre de usuario"
+58.	Leer nombreUsuario
+59.	Escribir "Ingresa tu edad"
+60.	Leer edad
+61.	Escribir "Ingresa la ciudad en la que resides"
+62.	Leer ciudad
+63.	Escribir "Ingresa el país que se encuentra la ciudad"
+64.	Leer pais
+65.	Escribir "Ingresa tu correo electrónico"
+66.	Leer correoElectronico
+
+// Se escribe un resumen con los datos ingresados por el usuario
+
+67.	Escribir ("El cliente crea una cuenta en Facebook que ingresa como nombre de 
+                   usuario %s con una edad de %d años en %s - %s con un
+                   correo electrónico de %s",
+                   nombre, 
+                   nombreUsuario, 
+                   edad, 
+                   ciudad, 
+                   pais, 
+                   correoElectronico)
+
+68. fin funcion crearFacebook()
+
+// Se define otro procedimiento para crear una cuenta en Twitter
+
+69. funcion crearTwitter()
+
+70.     nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+71.	nombres, x(100) [{A-Z}, {a-z}, {BS}]
+72.	apellidos, x(100) [{A-Z}, {a-z}, {BS}]
+73.	edad, i[0-n]
+74.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+75.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+76.	idioma, x(100) [{A-Z}, {a-z}, {BS}]
+77.     correoElectronico, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
+
+// Se pide datos por teclado al usuario
+
+78.	Escribir "Ingrese sus nombres completos"
+79. 	Leer nombres
+80. 	Escribir "Ingrese sus apellidos completos"
+81.	Leer apellidos
+82.	Escribir "Ingresa un nombre de usuario"
+83.     Leer nombreUsuario
+84.	Escribir "Ingresa tu edad"
+85.	Leer edad
+86.	Escribir "Ingresa a ciudad en la que resides"
+87.	Leer ciudad
+88.	Escribir "Ingresa el país en la que se encuentra la ciudad"
+89.	Leer pais
+90.	Escribir "Ingresa el idioma que se habla en el país"
+91.	Leer idioma
+92.	Escribir "Ingresa tu correo electrónico"
+93.	Leer correoElectronico
+
+// Se escribe un resumen con los datos ingresados por el usuario
+
+94.	Escribir ("El cliente %s %s crea una cuenta en Twitter que ingresa como nombre de 
+                   usuario %s con una edad de %d años en %s - %s con un idioma %s e ingresa
+                   como correo electrónico %s",
+                   nombres, 
+                   apellidos, 
+                   nombreUsuario, 
+                   edad, 
+                   ciudad, 
+                   país, 
+                   idioma,
+                   correoElectronico)
+
+95. fin funcion crearTwitter()
+
+// Se define otro procedimiento para crear una cuenta en WhatsApp
+
+96. funcion crearWhatsApp()
+
+97.	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+98.	celular, x(10) [{1-10}, {A-Z}, {a-z}, {BS}]
+99.	edad, i[0-n]
+100.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+101.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+
+// Se pide datos por teclado al usuario
+
+102.	Escribir "Ingresa un nombre de usuario"
+103.    Leer nombreUsuario
+104.	Escribir "Ingrese su número de celular"
+105.	Leer celular
+106.	Escribir "Ingresa tu edad"
+107.	Leer edad
+108.	Escribir "Ingresa la ciudad en la que resides"
+109.	Leer ciudad
+110.	Escribir "Ingresa el país que se encuentra la ciudad"
+111.	Leer pais
+
+// Se escribe un resumen con los datos ingresados por el usuario
+
+112. 	Escribir ("El cliente crea una cuenta en WhatsApp ingresa como nombre de usuario %s 
+                   con número de teléfono %s tiene %d años de edad en %s - %s",
+                   nombreUsuario, 
+                   celular, 
+                   edad, 
+                   ciudad, 
+                   país)
+
+113. fin funcion crearWhatsApp()
+
+// Se define otro procedimiento para crear una cuenta en Telegram
+                    
+114. funcion crearTelegram()
+
+115. 	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+116.	celular, x(10) [{1-10}, {A-Z}, {a-z}, {BS}]
+117.	edad, i[0-n]
+118.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+119.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+120.	areaInteres, x(100) [{A-Z}, {a-z}, {BS}]
+
+// Se pide datos por teclado al usuario
+
+121.	Escribir "Ingresa un nombre de usuario"
+122.    Leer nombreUsuario
+123.	Escribir "Ingresa tu número de celular"
+124.	Leer celular
+125.	Escribir "Ingresa tu edad"
+126.	Leer edad
+127.	Escribir "Ingresa la ciudad en la que resides"
+128.	Leer ciudad
+129.	Escribir "Ingresa el país en donde se encuentra la ciudad"
+130.	Leer pais
+131.    Escribir "Ingresa una área de tu interés"
+132.    Leer areaInteres
+
+// Se escribe un resumen con los datos ingresados por el usuario
+
+133.     Escribir ("El cliente crea una cuenta en Telegram ingresa como nombre de usuario %s 
+                   con número de celular %s tiene %d años de edad en %s - %s y tiene 
+                   interés en la área de %s",
+                   nombreUsuario, 
+                   celular, 
+                   edad, 
+                   ciudad, 
+                   país, 
+                   areaInteres)
+
+134. fin funcion crearTelegram()
+
+// Se define otro procedimiento para crear una cuenta en Signal
+
+135. funcion crearSignal()
+136. 	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+137.	celular, x(10) [{1-10}, {A-Z}, {a-z}, {BS}]
+138.	ciudad, i[0-n]
+139.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+140.	hobby, x(100) [{A-Z}, {a-z}, {BS}]
+
+// Se pide datos por teclado al usuario
+
+141.	Escribir "Ingresa un nombre de usuario"
+142.    Leer nombreUsuario
+143.	Escribir "Ingresa tu número de celular"
+144.	Leer celular
+145.	Escribir "Ingresa la ciudad en la que resides"
+146.	Leer ciudad
+147.	Escribir "Ingresa el país que se encuentra la ciudad"
+148.	Leer pais
+149.    Escribir "Ingresa tu hobby principal"
+150.    Leer hobby
+
+// Se escribe un resumen con los datos ingresados por el usuario
+
+151.	Escribir ("El cliente crea una cuenta en Signal ingresa como nombre de usuario %s 
+                   con un número de celular %d en %s - %s su hobby principal es %s",
+                    nombreUsuario, 
+                    celular, 
+                    ciudad, 
+                    pais, 
+                    hobby)
+
+152. fin funcion crearSignal()
+
+// Se define otro procedimiento para crear una cuenta en Instagram
+
+153. funcion crearInstagram()
+
+154.	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+155.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+156.	edad, i[0-n]
+157.	correoElectronico, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
+
+// Se pide datos por teclado al usuario
+
+158.	Escribir "Ingresa un nombre de usuario"
+159.    Leer nombreUsuario
+160.	Escribir "Ingresa tu edad"
+161.	Leer edad
+162.	Escribir "Ingresa la ciudad en la que resides"
+163.	Leer ciudad
+164.	Escribir "Ingresa tu correo electrónico"
+165.	Leer correoElectronico
+
+// Se escribe un resumen con los datos ingresados por el usuario
+
+166.	Escribir ("El cliente crea una cuenta en Instagram ingresa como nombre de usuario %s 
+                   Tiene %d años de edad en la ciudad de %s con un correo electrónico %s",
+                   nombreUsuario, 
+                   edad, 
+                   ciudad, 
+                   correoElectronico)
+
+167. fin funcion crearInstagram()
+
+// Se define otro procedimiento para crear una cuenta en Flickr
+
+168. funcion crearFlickr()
+
+169.	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+170.	correoElectronico, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
+
+// Se pide datos por teclado al usuario
+
+171.	Escribir "Ingresa un nombre de usuario"
+172.    Leer nombreUsuario	
+173.	Escribir "Ingresa tu correo electrónico"
+174.	Leer correoElectronico
+
+// Se escribe un resumen con los datos ingresados por el usuario
+
+175.	Escribir ("El cliente crea una cuenta en Flickr ingresa como nombre de usuario %s 
+                   con un correo electrónico %s", 
+                   nombreUsuario, 
+                   correoElectronico)
+
+176. fin funcion crearFlickr()
+
+// Se usa el número total de cuentas creadas en una funcion obtenerMensaje 
+
+177. funcion obtenerMensaje(contador ,i): i
+
+178.    cadenaFinal, x(100) [{0-20},{A-Z}, {a-z}, {BS}]
+179. 	(mensajeFinal(3),x(300)[{a-z}, {A-Z}, {BS}])
+180.	mensajeFinal <-- {"Campaña con poca afluencia", "Campaña moderada siga adelante", 
+                          "Excelente campaña"}
+
+// Se usa una condicional con el número de cuentas creadas y clasificarlas dependiendo de los rangos
+
+181.	Si ((contador >= 1) and (contador <= 5)) entonces
+182.		cadenaFinal <-- "Campaña con poca afluencia"
+183.	De lo contrario
+184.		Si ((contador >= 6) and (contador <= 5)) entonces
+185.			cadenaFinal <-- "Campaña moderada siga adelante"
+186.		De lo contrario 
+187.			Si (contador >= 6) entonces
+188.				cadenaFinal <-- "Excelente campaña"
+189.			Fin Si
+190.		Fin Si
+191.	Fin Si
+
+192. return cadenaFinal
+
+193. fin funcion obtenerMensaje()
+
+194. Fin

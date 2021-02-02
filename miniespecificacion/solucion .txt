@@ -66,14 +66,14 @@
 2. funcion principal()
 3. 	opcion, i[0-n]
 4.      bandera <-- true
-5.	contador, i[0,n] <-- 1
-6.      salir, x(100) [{1-10}, {A-Z}, {a-z}, {BS}]
+5.	contador, i[0,n] <-- 0
+6.      salir, i[0-n]
 7.      cadenaFinal, x(100) [{1-100}, {A-Z}, {a-z}, {BS}] 
 
 // Se crea un ciclo repetitivo para que el usuario decida ingresar o no más
 // datos con las opciones presentadas 
 
-8.	Mientras (bandera == true) entonces
+8.	Mientras (bandera) entonces
 
 // Se define las opciones en la que puede el usuario crear cuentas en las 
 // siguientes redes sociales
@@ -127,45 +127,45 @@
 // Se usa una condiciona para pregunta al usuario si quiere continuar 
 // agregando más cuentas  
 
-42. 	Escribir ("%s\n" + "Ingresar Si para ingresar mas datos")
+42. 	Escribir ("%s\n" + "Ingresar 2 para ingresar más datos")
 43.     Leer salir
-44.     	Si (salir != "Si")
+44.     	Si (salir == 2)
 45.     		bandera <-- false 
 46.     	Fin Si
-47.	Fin Mientras
+47.             Escribir ("Se crearon en total %d de cuentas" , contador)
+48.	Fin Mientras
 
-48.     Escribir ("Se crearon en total %d de cuentas" , contador)
-
-49.     Escribir ("%s\n" ,cadenaFinal)
+49.	cadenaFinal = obtenerMensaje(contador)
+50.     Escribir ("%s\n" ,cadenaFinal)
 			
-50. fin funcion principal()
+51. fin funcion principal()
 
 // Se define un procedimiento para crear una cuenta en Facebook
  
-51. funcion crearFacebook()
+52. funcion crearFacebook()
 
-52. 	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
-53.	edad, i[0-n]
-54.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
-55.	pais, x(100) [{A-Z}, {a-z}, {BS}]
-56.	correoElectronico, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
+53. 	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+54.	edad, i[0-n]
+55.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+56.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+57.	correo, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
 
 // Se pide datos por teclado al usuario
 
-57.	Escribir "Ingresa un nombre de usuario"
-58.	Leer nombreUsuario
-59.	Escribir "Ingresa tu edad"
-60.	Leer edad
-61.	Escribir "Ingresa la ciudad en la que resides"
-62.	Leer ciudad
-63.	Escribir "Ingresa el país que se encuentra la ciudad"
-64.	Leer pais
-65.	Escribir "Ingresa tu correo electrónico"
-66.	Leer correoElectronico
+58.	Escribir "Ingresa un nombre de usuario"
+59.	Leer nombreUsuario
+60.	Escribir "Ingresa tu edad"
+61.	Leer edad
+62.	Escribir "Ingresa la ciudad en la que resides"
+63.	Leer ciudad
+64.	Escribir "Ingresa el país que se encuentra la ciudad"
+65.	Leer pais
+66.	Escribir "Ingresa tu correo electrónico"
+67.	Leer correo
 
 // Se escribe un resumen con los datos ingresados por el usuario
 
-67.	Escribir ("El cliente crea una cuenta en Facebook que ingresa como nombre de 
+68.	Escribir ("El cliente crea una cuenta en Facebook que ingresa como nombre de 
                    usuario %s con una edad de %d años en %s - %s con un
                    correo electrónico de %s",
                    nombre, 
@@ -173,47 +173,47 @@
                    edad, 
                    ciudad, 
                    pais, 
-                   correoElectronico)
+                   correo)
 
-68. fin funcion crearFacebook()
+69. fin funcion crearFacebook()
 
 // Se define otro procedimiento para crear una cuenta en Twitter
 
-69. funcion crearTwitter()
+70. funcion crearTwitter()
 
-70.     nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
-71.	nombres, x(100) [{A-Z}, {a-z}, {BS}]
-72.	apellidos, x(100) [{A-Z}, {a-z}, {BS}]
-73.	edad, i[0-n]
-74.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
-75.	pais, x(100) [{A-Z}, {a-z}, {BS}]
-76.	idioma, x(100) [{A-Z}, {a-z}, {BS}]
-77.     correoElectronico, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
+71.     nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+72.	nombres, x(100) [{A-Z}, {a-z}, {BS}]
+73.	apellidos, x(100) [{A-Z}, {a-z}, {BS}]
+74.	edad, i[0-n]
+75.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+76.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+77.	idioma, x(100) [{A-Z}, {a-z}, {BS}]
+78.     correo, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
 
 // Se pide datos por teclado al usuario
 
-78.	Escribir "Ingrese sus nombres completos"
-79. 	Leer nombres
-80. 	Escribir "Ingrese sus apellidos completos"
-81.	Leer apellidos
-82.	Escribir "Ingresa un nombre de usuario"
-83.     Leer nombreUsuario
-84.	Escribir "Ingresa tu edad"
-85.	Leer edad
-86.	Escribir "Ingresa a ciudad en la que resides"
-87.	Leer ciudad
-88.	Escribir "Ingresa el país en la que se encuentra la ciudad"
-89.	Leer pais
-90.	Escribir "Ingresa el idioma que se habla en el país"
-91.	Leer idioma
-92.	Escribir "Ingresa tu correo electrónico"
-93.	Leer correoElectronico
+79.	Escribir "Ingrese sus nombres completos"
+80. 	Leer nombres
+81. 	Escribir "Ingrese sus apellidos completos"
+82.	Leer apellidos
+83.	Escribir "Ingresa un nombre de usuario"
+84.     Leer nombreUsuario
+85.	Escribir "Ingresa tu edad"
+86.	Leer edad
+87.	Escribir "Ingresa a ciudad en la que resides"
+88.	Leer ciudad
+89.	Escribir "Ingresa el país en la que se encuentra la ciudad"
+90.	Leer pais
+91.	Escribir "Ingresa el idioma que se habla en el país"
+92.	Leer idioma
+93.	Escribir "Ingresa tu correo electrónico"
+94.	Leer correo
 
 // Se escribe un resumen con los datos ingresados por el usuario
 
-94.	Escribir ("El cliente %s %s crea una cuenta en Twitter que ingresa como nombre de 
-                   usuario %s con una edad de %d años en %s - %s con un idioma %s e ingresa
-                   como correo electrónico %s",
+95.	Escribir ("El cliente %s %s crea una cuenta en Twitter que ingresa como nombre de 
+                   usuario %s con una edad de %d años en %s - %s con un idioma %s e
+                   ingresa como correo electrónico %s",
                    nombres, 
                    apellidos, 
                    nombreUsuario, 
@@ -221,75 +221,75 @@
                    ciudad, 
                    país, 
                    idioma,
-                   correoElectronico)
+                   correo)
 
-95. fin funcion crearTwitter()
+96. fin funcion crearTwitter()
 
 // Se define otro procedimiento para crear una cuenta en WhatsApp
 
-96. funcion crearWhatsApp()
+97. funcion crearWhatsApp()
 
-97.	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
-98.	celular, x(10) [{1-10}, {A-Z}, {a-z}, {BS}]
-99.	edad, i[0-n]
-100.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
-101.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+98.	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+99.	celular, i[0-n]
+100.	edad, i[0-n]
+101.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+102.	pais, x(100) [{A-Z}, {a-z}, {BS}]
 
 // Se pide datos por teclado al usuario
 
-102.	Escribir "Ingresa un nombre de usuario"
-103.    Leer nombreUsuario
-104.	Escribir "Ingrese su número de celular"
-105.	Leer celular
-106.	Escribir "Ingresa tu edad"
-107.	Leer edad
-108.	Escribir "Ingresa la ciudad en la que resides"
-109.	Leer ciudad
-110.	Escribir "Ingresa el país que se encuentra la ciudad"
-111.	Leer pais
+103.	Escribir "Ingresa un nombre de usuario"
+104.    Leer nombreUsuario
+105.	Escribir "Ingrese su número de celular"
+106.	Leer celular
+107.	Escribir "Ingresa tu edad"
+108.	Leer edad
+109.	Escribir "Ingresa la ciudad en la que resides"
+110.	Leer ciudad
+111.	Escribir "Ingresa el país que se encuentra la ciudad"
+112.	Leer pais
 
 // Se escribe un resumen con los datos ingresados por el usuario
 
-112. 	Escribir ("El cliente crea una cuenta en WhatsApp ingresa como nombre de usuario %s 
-                   con número de teléfono %s tiene %d años de edad en %s - %s",
+113. 	Escribir ("El cliente crea una cuenta en WhatsApp ingresa como nombre de usuario
+                   %s con número de celular %d tiene %d años de edad en %s - %s",
                    nombreUsuario, 
                    celular, 
                    edad, 
                    ciudad, 
-                   país)
+                   pais)
 
-113. fin funcion crearWhatsApp()
+114. fin funcion crearWhatsApp()
 
 // Se define otro procedimiento para crear una cuenta en Telegram
                     
-114. funcion crearTelegram()
+115. funcion crearTelegram()
 
-115. 	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
-116.	celular, x(10) [{1-10}, {A-Z}, {a-z}, {BS}]
-117.	edad, i[0-n]
-118.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
-119.	pais, x(100) [{A-Z}, {a-z}, {BS}]
-120.	areaInteres, x(100) [{A-Z}, {a-z}, {BS}]
+116. 	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+117.	celular, i[0-n]
+118.	edad, i[0-n]
+119.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+120.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+121.	areaInteres, x(100) [{A-Z}, {a-z}, {BS}]
 
 // Se pide datos por teclado al usuario
 
-121.	Escribir "Ingresa un nombre de usuario"
-122.    Leer nombreUsuario
-123.	Escribir "Ingresa tu número de celular"
-124.	Leer celular
-125.	Escribir "Ingresa tu edad"
-126.	Leer edad
-127.	Escribir "Ingresa la ciudad en la que resides"
-128.	Leer ciudad
-129.	Escribir "Ingresa el país en donde se encuentra la ciudad"
-130.	Leer pais
-131.    Escribir "Ingresa una área de tu interés"
-132.    Leer areaInteres
+122.	Escribir "Ingresa un nombre de usuario"
+123.    Leer nombreUsuario
+124.	Escribir "Ingresa tu número de celular"
+125.	Leer celular
+126.	Escribir "Ingresa tu edad"
+127.	Leer edad
+128.	Escribir "Ingresa la ciudad en la que resides"
+129.	Leer ciudad
+130.	Escribir "Ingresa el país en donde se encuentra la ciudad"
+131.	Leer pais
+132.    Escribir "Ingresa una área de tu interés"
+133.    Leer areaInteres
 
 // Se escribe un resumen con los datos ingresados por el usuario
 
-133.     Escribir ("El cliente crea una cuenta en Telegram ingresa como nombre de usuario %s 
-                   con número de celular %s tiene %d años de edad en %s - %s y tiene 
+134.     Escribir ("El cliente crea una cuenta en Telegram ingresa como nombre de usuario 
+                    %s con número de celular %d tiene %d años de edad en %s - %s y tiene 
                    interés en la área de %s",
                    nombreUsuario, 
                    celular, 
@@ -298,33 +298,34 @@
                    país, 
                    areaInteres)
 
-134. fin funcion crearTelegram()
+135. fin funcion crearTelegram()
 
 // Se define otro procedimiento para crear una cuenta en Signal
 
-135. funcion crearSignal()
-136. 	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
-137.	celular, x(10) [{1-10}, {A-Z}, {a-z}, {BS}]
-138.	ciudad, i[0-n]
-139.	pais, x(100) [{A-Z}, {a-z}, {BS}]
-140.	hobby, x(100) [{A-Z}, {a-z}, {BS}]
+136. funcion crearSignal()
+
+137. 	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+138.	celular, i[0-n]
+139.	ciudad, i[0-n]
+140.	pais, x(100) [{A-Z}, {a-z}, {BS}]
+141.	hobby, x(100) [{A-Z}, {a-z}, {BS}]
 
 // Se pide datos por teclado al usuario
 
-141.	Escribir "Ingresa un nombre de usuario"
-142.    Leer nombreUsuario
-143.	Escribir "Ingresa tu número de celular"
-144.	Leer celular
-145.	Escribir "Ingresa la ciudad en la que resides"
-146.	Leer ciudad
-147.	Escribir "Ingresa el país que se encuentra la ciudad"
-148.	Leer pais
-149.    Escribir "Ingresa tu hobby principal"
-150.    Leer hobby
+142.	Escribir "Ingresa un nombre de usuario"
+143.    Leer nombreUsuario
+144.	Escribir "Ingresa tu número de celular"
+145.	Leer celular
+146.	Escribir "Ingresa la ciudad en la que resides"
+147.	Leer ciudad
+148.	Escribir "Ingresa el país que se encuentra la ciudad"
+149.	Leer pais
+150.    Escribir "Ingresa tu hobby principal"
+151.    Leer hobby
 
 // Se escribe un resumen con los datos ingresados por el usuario
 
-151.	Escribir ("El cliente crea una cuenta en Signal ingresa como nombre de usuario %s 
+152.	Escribir ("El cliente crea una cuenta en Signal ingresa como nombre de usuario %s 
                    con un número de celular %d en %s - %s su hobby principal es %s",
                     nombreUsuario, 
                     celular, 
@@ -332,87 +333,88 @@
                     pais, 
                     hobby)
 
-152. fin funcion crearSignal()
+153. fin funcion crearSignal()
 
 // Se define otro procedimiento para crear una cuenta en Instagram
 
-153. funcion crearInstagram()
+154. funcion crearInstagram()
 
-154.	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
-155.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
-156.	edad, i[0-n]
-157.	correoElectronico, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
+155.	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+156.	ciudad, x(100) [{A-Z}, {a-z}, {BS}]
+157.	edad, i[0-n]
+158.	correo, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
 
 // Se pide datos por teclado al usuario
 
-158.	Escribir "Ingresa un nombre de usuario"
-159.    Leer nombreUsuario
-160.	Escribir "Ingresa tu edad"
-161.	Leer edad
-162.	Escribir "Ingresa la ciudad en la que resides"
-163.	Leer ciudad
-164.	Escribir "Ingresa tu correo electrónico"
-165.	Leer correoElectronico
+159.	Escribir "Ingresa un nombre de usuario"
+160.    Leer nombreUsuario
+161.	Escribir "Ingresa tu edad"
+162.	Leer edad
+163.	Escribir "Ingresa la ciudad en la que resides"
+164.	Leer ciudad
+165.	Escribir "Ingresa tu correo electrónico"
+166.	Leer correo
 
 // Se escribe un resumen con los datos ingresados por el usuario
 
-166.	Escribir ("El cliente crea una cuenta en Instagram ingresa como nombre de usuario %s 
-                   Tiene %d años de edad en la ciudad de %s con un correo electrónico %s",
+167.	Escribir ("El cliente crea una cuenta en Instagram ingresa como nombre de usuario
+                   %s tiene %d años de edad en la ciudad de %s con un correo electrónico
+                   %s",
                    nombreUsuario, 
                    edad, 
                    ciudad, 
-                   correoElectronico)
+                   correo)
 
-167. fin funcion crearInstagram()
+168. fin funcion crearInstagram()
 
 // Se define otro procedimiento para crear una cuenta en Flickr
 
-168. funcion crearFlickr()
+169. funcion crearFlickr()
 
-169.	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
-170.	correoElectronico, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
+170.	nombreUsuario, x(100) [{A-Z}, {a-z}, {BS}]
+171.	correo, x(100) [{1-20},{A-Z}, {a-z}, {BS}]
 
 // Se pide datos por teclado al usuario
 
-171.	Escribir "Ingresa un nombre de usuario"
-172.    Leer nombreUsuario	
-173.	Escribir "Ingresa tu correo electrónico"
-174.	Leer correoElectronico
+172.	Escribir "Ingresa un nombre de usuario"
+173.    Leer nombreUsuario	
+174.	Escribir "Ingresa tu correo electrónico"
+175.	Leer correo
 
 // Se escribe un resumen con los datos ingresados por el usuario
 
-175.	Escribir ("El cliente crea una cuenta en Flickr ingresa como nombre de usuario %s 
+176.	Escribir ("El cliente crea una cuenta en Flickr ingresa como nombre de usuario %s 
                    con un correo electrónico %s", 
                    nombreUsuario, 
-                   correoElectronico)
+                   correo)
 
-176. fin funcion crearFlickr()
+177. fin funcion crearFlickr()
 
 // Se usa el número total de cuentas creadas en una funcion obtenerMensaje 
 
-177. funcion obtenerMensaje(contador ,i): i
+178. funcion obtenerMensaje(contador ,i): i
 
-178.    cadenaFinal, x(100) [{0-20},{A-Z}, {a-z}, {BS}]
-179. 	(mensajeFinal(3),x(300)[{a-z}, {A-Z}, {BS}])
-180.	mensajeFinal <-- {"Campaña con poca afluencia", "Campaña moderada siga adelante", 
+179.    cadenaFinal, x(100) [{0-20},{A-Z}, {a-z}, {BS}]
+180. 	(mensajeFinal(3),x(300)[{a-z}, {A-Z}, {BS}])
+181.	mensajeFinal <-- {"Campaña con poca afluencia", "Campaña moderada siga adelante", 
                           "Excelente campaña"}
 
 // Se usa una condicional con el número de cuentas creadas y clasificarlas dependiendo de los rangos
 
-181.	Si ((contador >= 1) and (contador <= 5)) entonces
-182.		cadenaFinal <-- "Campaña con poca afluencia"
-183.	De lo contrario
-184.		Si ((contador >= 6) and (contador <= 5)) entonces
-185.			cadenaFinal <-- "Campaña moderada siga adelante"
-186.		De lo contrario 
-187.			Si (contador >= 6) entonces
-188.				cadenaFinal <-- "Excelente campaña"
-189.			Fin Si
-190.		Fin Si
-191.	Fin Si
+182.	Si ((contador >= 1) and (contador <= 5)) entonces
+183.		cadenaFinal <-- "Campaña con poca afluencia"
+184.	De lo contrario
+185.		Si ((contador >= 6) and (contador <= 15)) entonces
+186.			cadenaFinal <-- "Campaña moderada siga adelante"
+187.		De lo contrario 
+188.			Si (contador >= 16) entonces
+189.				cadenaFinal <-- "Excelente campaña"
+190.			Fin Si
+191.		Fin Si
+192.	Fin Si
 
-192. return cadenaFinal
+193. return cadenaFinal
 
-193. fin funcion obtenerMensaje()
+194. fin funcion obtenerMensaje()
 
-194. Fin
+195. Fin

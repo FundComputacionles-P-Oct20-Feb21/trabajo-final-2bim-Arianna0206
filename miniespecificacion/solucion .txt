@@ -167,8 +167,7 @@
 
 68.	Escribir ("El cliente crea una cuenta en Facebook que ingresa como nombre de 
                    usuario %s con una edad de %d años en %s - %s con un
-                   correo electrónico de %s",
-                   nombre, 
+                   correo electrónico de %s", 
                    nombreUsuario, 
                    edad, 
                    ciudad, 
@@ -200,7 +199,7 @@
 84.     Leer nombreUsuario
 85.	Escribir "Ingresa tu edad"
 86.	Leer edad
-87.	Escribir "Ingresa a ciudad en la que resides"
+87.	Escribir "Ingresa la ciudad en la que resides"
 88.	Leer ciudad
 89.	Escribir "Ingresa el país en la que se encuentra la ciudad"
 90.	Leer pais
@@ -219,7 +218,7 @@
                    nombreUsuario, 
                    edad, 
                    ciudad, 
-                   país, 
+                   pais, 
                    idioma,
                    correo)
 
@@ -251,7 +250,7 @@
 // Se escribe un resumen con los datos ingresados por el usuario
 
 113. 	Escribir ("El cliente crea una cuenta en WhatsApp ingresa como nombre de usuario
-                   %s con número de celular %d tiene %d años de edad en %s - %s",
+                   %s con número de celular %d tiene %d años de edad en %s - %s\n",
                    nombreUsuario, 
                    celular, 
                    edad, 
@@ -295,7 +294,7 @@
                    celular, 
                    edad, 
                    ciudad, 
-                   país, 
+                   pais, 
                    areaInteres)
 
 135. fin funcion crearTelegram()
@@ -326,7 +325,7 @@
 // Se escribe un resumen con los datos ingresados por el usuario
 
 152.	Escribir ("El cliente crea una cuenta en Signal ingresa como nombre de usuario %s 
-                   con un número de celular %d en %s - %s su hobby principal es %s",
+                   con un número de celular %d en %s - %s su hobby principal es %s\n",
                     nombreUsuario, 
                     celular, 
                     ciudad, 
@@ -359,7 +358,7 @@
 
 167.	Escribir ("El cliente crea una cuenta en Instagram ingresa como nombre de usuario
                    %s tiene %d años de edad en la ciudad de %s con un correo electrónico
-                   %s",
+                   %s\n",
                    nombreUsuario, 
                    edad, 
                    ciudad, 
@@ -384,7 +383,7 @@
 // Se escribe un resumen con los datos ingresados por el usuario
 
 176.	Escribir ("El cliente crea una cuenta en Flickr ingresa como nombre de usuario %s 
-                   con un correo electrónico %s", 
+                   con un correo electrónico %s\n", 
                    nombreUsuario, 
                    correo)
 
